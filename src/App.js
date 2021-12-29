@@ -4,10 +4,7 @@ import Todos from "./todos";
 
 class App extends Component {
   state = {
-    todos: [
-      { id: 1, content: "Buy some Milk" },
-      { id: 2, content: "No need more today" },
-    ],
+    todos: [],
     todoValuInput: "",
   };
 
@@ -20,6 +17,19 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    if (this.state.todoValuInput === "" ) {
+      alert("Add todo");
+    } else {
+      let todos = [
+        ...this.state.todos,
+        { id: Math.random(), content: this.state.todoValuInput },
+      ];
+      this.setState({
+        todoValuInput: "",
+        todos: todos,
+      });
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
   };
 
   //   deleteTodo
@@ -31,6 +41,8 @@ class App extends Component {
     this.setState({
       todos,
     });
+  
+    localStorage.setItem("todos", JSON.stringify(todos));
   };
 
   addTodo = (todo) => {
@@ -41,6 +53,11 @@ class App extends Component {
       todos
     })
   };
+
+  componentDidMount() {
+    let todoData = JSON.parse(localStorage.getItem("todos"))
+    this.setState({todos: this.state.todos.concat(todoData)});
+  }
 
   render() {
     return (
@@ -59,7 +76,7 @@ class App extends Component {
           </form>
         </div>
         <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
-        <AddTodo addTodo={this.addTodo} />
+        {/*<AddTodo addTodo={this.addTodo} /> */}
       </div>
     );
   }

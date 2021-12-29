@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ninja-toto/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/ninja-toto/static/js/main.c16f1881.chunk.js",
+    "main.js.map": "/ninja-toto/static/js/main.c16f1881.chunk.js.map",
+    "runtime-main.js": "/ninja-toto/static/js/runtime-main.55792c12.js",
+    "runtime-main.js.map": "/ninja-toto/static/js/runtime-main.55792c12.js.map",
+    "static/js/2.af4b92eb.chunk.js": "/ninja-toto/static/js/2.af4b92eb.chunk.js",
+    "static/js/2.af4b92eb.chunk.js.map": "/ninja-toto/static/js/2.af4b92eb.chunk.js.map",
+    "static/js/3.79ebc665.chunk.js": "/ninja-toto/static/js/3.79ebc665.chunk.js",
+    "static/js/3.79ebc665.chunk.js.map": "/ninja-toto/static/js/3.79ebc665.chunk.js.map",
+    "index.html": "/ninja-toto/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/ninja-toto/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.af4b92eb.chunk.js.LICENSE.txt": "/ninja-toto/static/js/2.af4b92eb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.55792c12.js",
+    "static/js/2.af4b92eb.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.c16f1881.chunk.js"
+  ]
+}
