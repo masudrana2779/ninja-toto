@@ -26,7 +26,7 @@ class App extends Component {
       ];
       this.setState({
         todoValuInput: "",
-        todos: todos,
+        todos
       });
       localStorage.setItem("todos", JSON.stringify(todos));
     }
@@ -45,6 +45,14 @@ class App extends Component {
     localStorage.setItem("todos", JSON.stringify(todos));
   };
 
+  
+
+  // Edit
+
+  handleEdit = (id) => {
+    console.log(id)
+  }
+
   addTodo = (todo) => {
     console.log(todo);
     todo.id = Math.random();
@@ -52,6 +60,7 @@ class App extends Component {
     this.setState({
       todos
     })
+    localStorage.setItem("todos", JSON.stringify(todos));
   };
 
   componentDidMount() {
@@ -75,8 +84,8 @@ class App extends Component {
             <button onClick={this.handleSubmit}>Add</button>
           </form>
         </div>
-        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
-        {/*<AddTodo addTodo={this.addTodo} /> */}
+        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} editTodo={this.handleEdit} />
+        <AddTodo addTodo={this.addTodo} /> 
       </div>
     );
   }
