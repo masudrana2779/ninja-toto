@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import AddTodo from "./addTodo";
 import Todos from "./todos";
 
 class App extends Component {
@@ -10,7 +11,6 @@ class App extends Component {
     todoValuInput: "",
   };
 
-
   // add todo
   handleChange = (e) => {
     this.setState({
@@ -20,19 +20,6 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.state.todoValuInput === "" ) {
-      alert("Add todo");
-    } else {
-      let todos = [
-        ...this.state.todos,
-        { id: Math.random(), content: this.state.todoValuInput },
-      ];
-      this.setState({
-        todoValuInput: "",
-        todos: todos,
-      });
-      localStorage.setItem("todos", JSON.stringify(todos));
-    }
   };
 
   //   deleteTodo
@@ -46,11 +33,14 @@ class App extends Component {
     });
   };
 
-
-  componentDidMount() {
-    let todoData = localStorage.getItem("todos")
-    console.log(todoData,5454545454);
-  }
+  addTodo = (todo) => {
+    console.log(todo);
+    todo.id = Math.random();
+    let todos = [...this.state.todos, todo]
+    this.setState({
+      todos
+    })
+  };
 
   render() {
     return (
@@ -69,6 +59,7 @@ class App extends Component {
           </form>
         </div>
         <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
+        <AddTodo addTodo={this.addTodo} />
       </div>
     );
   }
